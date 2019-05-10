@@ -18,7 +18,7 @@ def main():
         print("Welcome to your password list. What is your name?")
         user_name = input()
 
-        print(f,"hello{user_name}. What would you like to do?")
+        print(f"hello{user_name}. What would you like to do?")
         print('\n')
 
         while True:
