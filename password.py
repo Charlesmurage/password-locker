@@ -5,7 +5,7 @@ class Password:
     def save_password(self):
             Password.password_list.append(self)
 
-    def delete_contact(self):
+    def delete_passwords(self):
             Password.password_list.remove(self)
 
 
@@ -15,3 +15,7 @@ class Password:
         self.last_name = last_name
         self.user_name = user_name
         self.password = password
+
+    @classmethod
+    def display_passwords(cls):
+        return cls.password_list
