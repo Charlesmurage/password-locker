@@ -2,6 +2,9 @@ class Password:
 
     password_list = []
 
+    def save_password(self):
+            Password.password_list.append(self)
+
     def __init__(self,first_name,last_name,user_name,password):
         
         self.first_name = first_name
