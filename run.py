@@ -2,7 +2,7 @@
 from password import Password
 
 def create_password(fname,lname,uname,password):
-        new_password = Password(fname,lname,uname,password)
+        new_password = Password(smedia,fname,lname,uname,password)
         return new_password
 
 def save_password(password):
@@ -30,6 +30,8 @@ def main():
                         print("New Password")
                         print("-"*10)
 
+                        print("which social media account?")
+                        smedia = input()
                         print("First Name")
                         f_name = input()
 
@@ -43,7 +45,7 @@ def main():
                         password = input()
 
 
-                        save_password(save_password(f_name,l_name,uname,password))
+                        save_password(save_password(smedia,f_name,l_name,uname,password))
                         print('\n')
                         print(f"New Password {f_name} {l_name} created")
 
