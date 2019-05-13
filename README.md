@@ -1,6 +1,6 @@
 # Password Locker
 
-#### This is aprogram for saving all your credentails for all your accounts. {10/05/2019}
+#### This is a program for saving all your credentails for all your accounts. {10/05/2019}
 
 #### By **Charles Maina Murage**
 
