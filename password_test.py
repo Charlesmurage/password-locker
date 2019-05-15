@@ -2,17 +2,27 @@ import unittest
 from password import Password
 
 class TestPassword(unittest.TestCase):
+   
+   
     def setUp(self):
+        '''
+        set up method to run before each test case
+        '''
 
-        self.new_password = Password("charles","maina","charles94","3094")
+        self.new_password = Password("instagram","James","Muriuki","cmaina","3094")
+        
+    def test_init(self):
+        '''
+        def test_init test case to see if the object is initialized correctly
+        '''
+        self.assertEqual(self.new_password.smedia,"instagram")
+        self.assertEqual(self.new_password.first_name,"James")
+        self.assertEqual(self.new_password.last_name,"Muriuki")
+        self.assertEqual(self.new_password.user_name,"cmaina")
+        self.assertEqual(self.new_password.password,"3094")
 
     def tearDown(self):
-            Password.password_list = []
-    def test_init(self):
-            self.assertEqual(self.new_password.first_name,"charles")
-            self.assertEqual(self.new_password.last_name,"maina")
-            self.assertEqual(self.new_password.user_name,"charles94")
-            self.assertEqual(self.new_password.password,"3094")
+        Password.password_list = []
 
     def test_save_password(self):
             self.new_password.save_password()
@@ -20,13 +30,13 @@ class TestPassword(unittest.TestCase):
 
     def test_save_mulitple_password(self):
             self.new_password.save_password()
-            test_password = Password("charles","maina","charles34","1234") 
+            test_password = Password("instagram","charles","maina","charles34","1234") 
             test_password.save_password()
             self.assertEqual(len(Password.password_list),2)
 
     def test_delete_passwords(self):
             self.new_password.save_password()
-            test_password = Password("charles","maina","charles34","1234") 
+            test_password = Password("instagram","charles","maina","charles34","1234") 
             test_password.save_password()
 
             self.new_password.delete_passwords()
