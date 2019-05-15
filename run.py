@@ -1,14 +1,14 @@
 #!/usr/bin/env python3.6
 from password import Password
 
-def create_password(fname,lname,uname,password):
-        new_password = Password(smedia,fname,lname,uname,password)
+def create_password(smedia,first_name,last_name,user_name,password):
+        new_password = Password(smedia,first_name,last_name,user_name,password)
         return new_password
 
 def save_password(password):
         password.save_password()
 
-def delete_passwords(password):
+def delete_passwords(Password):
         password.delete_passwords()
 
 def display_passwords():
@@ -33,36 +33,37 @@ def main():
                         print("which social media account?")
                         smedia = input()
                         print("First Name")
-                        f_name = input()
+                        first_name = input()
 
                         print("Last Name")
-                        l_name = input()
+                        last_name = input()
 
                         print("Username")
-                        uname = input()
+                        user_name = input()
 
                         print("Password")
                         password = input()
 
 
-                        save_password(save_password(smedia,f_name,l_name,uname,password))
+                        save_password(create_password(smedia,first_name,last_name,user_name,password))
                         print('\n')
-                        print(f"New Password {f_name} {l_name} created")
+                        print(f"New Password {first_name} {last_name} created")
+                        print('\n')
 
                 elif short_code == 'dp':
                     if display_passwords():
-                            print("Here is a list of all your passwords")
-                            print('\n')
+                        print("Here is a list of all your passwords")
+                        print('\n')
 
                     for password in display_passwords():
-                             print(f"{password.first_name} {password.last_name} .....{password.passord}")
+                        print(f"{password.first_name} {password.last_name} .....{password.password}")
 
-                             print('\n')
+                        print('\n')
 
-                    else:
-                            print('\n')
-                            print("You don't seem to have any password")
-                            print('\n')
+                else:
+                        print('\n')
+                        print("You don't seem to have any password")
+                        print('\n')
 
                 elif short_code == "ex":
                             print("Bye .......")
